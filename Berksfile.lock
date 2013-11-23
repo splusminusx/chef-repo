@@ -6,29 +6,53 @@
     "build-essential": {
       "locked_version": "1.4.2"
     },
-    "nginx": {
-      "locked_version": "2.0.4"
-    },
     "git": {
       "locked_version": "2.7.0"
+    },
+    "mercurial": {
+      "locked_version": "2.0.4"
     },
     "openssl": {
       "locked_version": "1.1.0"
     },
-    "postgresql": {
-      "locked_version": "3.3.4"
+    "zsh": {
+      "locked_version": "1.0.0"
     },
-    "mercurial": {
+    "vim": {
+      "locked_version": "1.0.2"
+    },
+    "oh_my_zsh": {
+      "path": "./cookbooks/oh-my-zsh"
+    },
+    "virtualenvwrapper": {
+      "path": "./cookbooks/virtualenvwrapper"
+    },
+    "nginx": {
       "locked_version": "2.0.4"
     },
     "database": {
       "locked_version": "1.5.2"
     },
-    "zsh": {
-      "locked_version": "1.0.0"
+    "postgresql": {
+      "locked_version": "3.3.4"
     },
-    "oh_my_zsh": {
-      "path": "./cookbooks/oh-my-zsh"
+    "python": {
+      "locked_version": "1.4.4"
+    },
+    "dmg": {
+      "locked_version": "2.0.8"
+    },
+    "yum": {
+      "locked_version": "2.4.2"
+    },
+    "windows": {
+      "locked_version": "1.11.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "runit": {
+      "locked_version": "1.4.0"
     },
     "bluepill": {
       "locked_version": "2.3.0"
@@ -38,24 +62,6 @@
     },
     "ohai": {
       "locked_version": "1.1.12"
-    },
-    "runit": {
-      "locked_version": "1.4.0"
-    },
-    "yum": {
-      "locked_version": "2.4.2"
-    },
-    "dmg": {
-      "locked_version": "2.0.8"
-    },
-    "windows": {
-      "locked_version": "1.11.0"
-    },
-    "chef_handler": {
-      "locked_version": "1.1.4"
-    },
-    "python": {
-      "locked_version": "1.4.4"
     },
     "mysql": {
       "locked_version": "4.0.6"
