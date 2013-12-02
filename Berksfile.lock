@@ -39,6 +39,9 @@
     "python": {
       "locked_version": "1.4.4"
     },
+    "livetex-qa-site": {
+      "path": "./cookbooks/livetex-qa-site"
+    },
     "dmg": {
       "locked_version": "2.0.8"
     },
