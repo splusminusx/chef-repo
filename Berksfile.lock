@@ -39,6 +39,9 @@
     "python": {
       "locked_version": "1.4.4"
     },
+    "supervisord": {
+      "locked_version": "1.0.0"
+    },
     "livetex-qa-site": {
       "path": "./cookbooks/livetex-qa-site"
     },
