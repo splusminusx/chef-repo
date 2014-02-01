@@ -9,6 +9,7 @@
 
 project_name = node['livetex-qa-site']['project_name']
 project_path = node['livetex-qa-site']['project_path']
+domain = node['livetex-qa-site']['domain']
 
 
 template "/etc/nginx/sites-available/#{project_name}" do
@@ -20,7 +21,7 @@ template "/etc/nginx/sites-available/#{project_name}" do
     :project_name => project_name,
     :django_dir => "#{project_path}/#{project_name}",
     :log_dir => "#{project_path}/log",
-    :domain => "#{node['livetex-qa-site']['domain']}"
+    :domain => "#{domain}"
   })
 end
 

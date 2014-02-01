@@ -8,7 +8,8 @@
 #
 
 project_path = node['livetex-qa-site']['project_path']
-directories = ['/', '/log']
+project_name = node['livetex-qa-site']['project_name']
+directories = ["/", "/log", "/#{project_name}", "/#{project_name}/#{project_name}"]
 
 
 if !File.directory?(project_path)
