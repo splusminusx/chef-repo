@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-default['virtualenvwrapper']['workon_home'] = "/home/vagrant/.venvs"
+default['virtualenvwrapper']['workon_home'] = "/vagrant/projects"
 default['virtualenvwrapper']['user'] = "vagrant"
 default['virtualenvwrapper']['group'] = "vagrant"
 default['virtualenvwrapper']['profile'] = "/home/vagrant/.profile"
