@@ -28,3 +28,8 @@ end
 link "/etc/nginx/sites-enabled/#{project_name}" do
   to "/etc/nginx/sites-available/#{project_name}"
 end
+
+
+service 'nginx' do
+  action :reload
+end

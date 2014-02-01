@@ -18,5 +18,5 @@ supervisord_program "#{project_name}" do
   command "#{project_path}/gunicorn_start"
   user 'root'
   stdout_logfile "#{project_path}/log/gunicorn_stdout.log"
-  stderr_logfile "#{project_path}/log/gunicorn_stdout.log"
+  stderr_logfile "#{project_path}/log/gunicorn_stderr.log"
 end
