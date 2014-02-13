@@ -1,0 +1,19 @@
+{
+  "name": "base",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[git]",
+    "recipe[vim]",
+    "recipe[virtualenvwrapper]",
+    "recipe[oh_my_zsh]"
+  ],
+  "env_run_lists": {
+  }
+}
