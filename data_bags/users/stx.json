@@ -1,0 +1,9 @@
+{
+  "id": "stx",
+  "home": "/home/stx",
+  "shell": "/bin/zsh",
+  "password": "$6$vhd34sdf$PmNq8Pwg5B0b/tLHkr.wtFS5afUC2kOUh0hUayIt4SVCqtJuPDG5FGBOIDB8XHSbPqzm1dQZQcDw7Q.OLS8Pf0",
+  "groups": [
+    "sudo"
+  ]
+}
