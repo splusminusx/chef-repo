@@ -23,16 +23,16 @@ python_pip "virtualenvwrapper" do
   action :install
 end
 
-virtualenvwrapper_users = data_bag("virtualenvwrapper")
+virtualenvwrapper_users = node['virtualenvwrapper']['users']
 
 virtualenvwrapper_users.each do |virtualenvwrapper_user|
 
 	opts = data_bag_item("virtualenvwrapper", virtualenvwrapper_user)
 
-	workon_home = opts['virtualenvwrapper']['workon_home']
-	user_name = opts['virtualenvwrapper']['user']
-	user_group = opts['virtualenvwrapper']['group']
-	user_profile = opts['virtualenvwrapper']['profile']
+	workon_home = opts['workon_home']
+	user_name = opts['user']
+	user_group = opts['group']
+	user_profile = opts['profile']
 
 	# Create the workon home directory
 	directory workon_home do

@@ -1,0 +1,7 @@
+{
+  "id": "stx",
+  "workon_home": "/home/stx/.venvs",
+  "user": "stx",
+  "group": "stx",
+  "profile": "/home/stx/.profile"
+}

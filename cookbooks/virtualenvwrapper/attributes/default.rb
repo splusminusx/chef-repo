@@ -21,4 +21,6 @@ default['virtualenvwrapper']['workon_home'] = "/vagrant/projects"
 default['virtualenvwrapper']['user'] = "vagrant"
 default['virtualenvwrapper']['group'] = "vagrant"
 default['virtualenvwrapper']['profile'] = "/home/vagrant/.profile"
+
 default['virtualenvwrapper']['script'] = "/usr/local/bin/virtualenvwrapper.sh"
+default['virtualenvwrapper']['users'] =  ["vagrant"]
