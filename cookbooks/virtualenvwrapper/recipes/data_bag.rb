@@ -42,6 +42,10 @@ virtualenvwrapper_users.each do |virtualenvwrapper_user|
 	  recursive true
 	end
 
+	if not File.exists?(user_profile) 
+	  File.open(user_profile, 'w') {|f| f.write("# profile file") }
+	end
+
 	# Add variables to user profile
 	[ "export WORKON_HOME='#{workon_home}'",
 	  "source '#{node['virtualenvwrapper']['script']}'" ].each do |line|
