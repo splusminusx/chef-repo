@@ -3,6 +3,9 @@
   "description": "",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "users": [
+      "stx"
+    ]
   },
   "override_attributes": {
   },
@@ -12,7 +15,8 @@
     "recipe[git]",
     "recipe[vim]",
     "recipe[virtualenvwrapper]",
-    "recipe[oh_my_zsh]"
+    "recipe[oh_my_zsh]",
+    "recipe[user::data_bag]"
   ],
   "env_run_lists": {
   }
