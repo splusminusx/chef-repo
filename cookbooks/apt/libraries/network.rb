@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: virtualenvwrapper
-# Attribute File:: default
+# Cookbook Name:: apt
+# library:: network
 #
-# Copyright 2013, Damon Jablons
+# Copyright 2013, Opscode, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +17,15 @@
 # limitations under the License.
 #
 
-default['virtualenvwrapper']['workon_home'] = "/vagrant/projects"
-default['virtualenvwrapper']['user'] = "vagrant"
-default['virtualenvwrapper']['group'] = "vagrant"
-default['virtualenvwrapper']['profile'] = "/home/vagrant/.profile"
-
-default['virtualenvwrapper']['script'] = "/usr/local/bin/virtualenvwrapper.sh"
-default['virtualenvwrapper']['users'] =  ["vagrant"]
+module ::Apt
+  def interface_ipaddress(host, interface)
+    if interface
+      addresses = host['network']['interfaces'][interface]['addresses']
+      addresses.select do |ip, data|
+        return ip if data['family'].eql?('inet')
+      end
+    else
+      return host.ipaddress
+    end
+  end
+end

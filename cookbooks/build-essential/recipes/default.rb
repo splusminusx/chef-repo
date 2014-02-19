@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: virtualenvwrapper
-# Attribute File:: default
+# Cookbook Name:: build-essential
+# Recipe:: default
 #
-# Copyright 2013, Damon Jablons
+# Copyright 2008-2009, Opscode, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +17,8 @@
 # limitations under the License.
 #
 
-default['virtualenvwrapper']['workon_home'] = "/vagrant/projects"
-default['virtualenvwrapper']['user'] = "vagrant"
-default['virtualenvwrapper']['group'] = "vagrant"
-default['virtualenvwrapper']['profile'] = "/home/vagrant/.profile"
-
-default['virtualenvwrapper']['script'] = "/usr/local/bin/virtualenvwrapper.sh"
-default['virtualenvwrapper']['users'] =  ["vagrant"]
+begin
+  include_recipe "build-essential::#{node['platform_family']}"
+rescue Chef::Exceptions::RecipeNotFound
+  Chef::Log.warn "A build-essential recipe does not exist for the platform_family: #{node['platform_family']}"
+end

@@ -1,8 +1,9 @@
 #
-# Cookbook Name:: virtualenvwrapper
-# Attribute File:: default
+# Author:: Paul Morotn (<pmorton@biaprotect.com>)
+# Cookbook Name:: windows
+# Resource:: auto_run
 #
-# Copyright 2013, Damon Jablons
+# Copyright:: 2011, Business Intelligence Associates, Inc
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +18,13 @@
 # limitations under the License.
 #
 
-default['virtualenvwrapper']['workon_home'] = "/vagrant/projects"
-default['virtualenvwrapper']['user'] = "vagrant"
-default['virtualenvwrapper']['group'] = "vagrant"
-default['virtualenvwrapper']['profile'] = "/home/vagrant/.profile"
+def initialize(name,run_context=nil)
+  super
+  @action = :create
+end
 
-default['virtualenvwrapper']['script'] = "/usr/local/bin/virtualenvwrapper.sh"
-default['virtualenvwrapper']['users'] =  ["vagrant"]
+actions :create, :remove
+
+attribute :program, :kind_of => String
+attribute :name, :kind_of => String, :name_attribute => true
+attribute :args, :kind_of => String, :default => ''

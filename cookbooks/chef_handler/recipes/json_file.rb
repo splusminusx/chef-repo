@@ -1,8 +1,9 @@
 #
-# Cookbook Name:: virtualenvwrapper
-# Attribute File:: default
+# Author:: Seth Chisamore (<schisamo@opscode.com>)
+# Cookbook Name:: chef_handlers
+# Recipe:: json_file
 #
-# Copyright 2013, Damon Jablons
+# Copyright 2011, Opscode, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +18,11 @@
 # limitations under the License.
 #
 
-default['virtualenvwrapper']['workon_home'] = "/vagrant/projects"
-default['virtualenvwrapper']['user'] = "vagrant"
-default['virtualenvwrapper']['group'] = "vagrant"
-default['virtualenvwrapper']['profile'] = "/home/vagrant/.profile"
+# force resource actions in compile phase so exception handler 
+# fires for compile phase exceptions
 
-default['virtualenvwrapper']['script'] = "/usr/local/bin/virtualenvwrapper.sh"
-default['virtualenvwrapper']['users'] =  ["vagrant"]
+chef_handler "Chef::Handler::JsonFile" do
+  source "chef/handler/json_file"
+  arguments :path => '/var/chef/reports'
+  action :nothing
+end.run_action(:enable)

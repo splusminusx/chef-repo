@@ -9,8 +9,8 @@
 
 
 django_database node['django-site']['project_name'] do 
-	user 'vagrant'
-	password 'vagrant'
+	user node['django-site']['database_user']
+	password node['django-site']['database_password']
 	project_name node['django-site']['project_name']
 	project_path node['django-site']['project_path']
 end
@@ -20,6 +20,6 @@ django_site node['django-site']['project_name'] do
 	project_path node['django-site']['project_path']
 	domain node['django-site']['domain']
 	dependencies node['django-site']['dependencies']
-	user 'vagrant'
-	group 'vagrant'
+	user node['django-site']['user']
+	group node['django-site']['group']
 end

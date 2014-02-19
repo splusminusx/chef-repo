@@ -1,8 +1,9 @@
 #
-# Cookbook Name:: virtualenvwrapper
-# Attribute File:: default
+# Author:: Seth Chisamore (<schisamo@opscode.com>)
+# Cookbook Name:: windows
+# Provider:: reboot
 #
-# Copyright 2013, Damon Jablons
+# Copyright:: 2011, Opscode, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +18,14 @@
 # limitations under the License.
 #
 
-default['virtualenvwrapper']['workon_home'] = "/vagrant/projects"
-default['virtualenvwrapper']['user'] = "vagrant"
-default['virtualenvwrapper']['group'] = "vagrant"
-default['virtualenvwrapper']['profile'] = "/home/vagrant/.profile"
+action :request do
+  node.run_state[:reboot_requested] = true
+  node.run_state[:reboot_timeout] = @new_resource.timeout
+  node.run_state[:reboot_reason] = @new_resource.reason
+end
 
-default['virtualenvwrapper']['script'] = "/usr/local/bin/virtualenvwrapper.sh"
-default['virtualenvwrapper']['users'] =  ["vagrant"]
+action :cancel do
+  node.run_state.delete(:reboot_requested)
+  node.run_state.delete(:reboot_timeout)
+  node.run_state.delete(:reboot_reason)
+end

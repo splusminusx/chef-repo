@@ -1,8 +1,8 @@
+# Encoding: utf-8
+# Cookbook Name:: dmg
+# Attributes:: default
 #
-# Cookbook Name:: virtualenvwrapper
-# Attribute File:: default
-#
-# Copyright 2013, Damon Jablons
+# Copyright 2011, Joshua Timberman
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,11 +16,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-default['virtualenvwrapper']['workon_home'] = "/vagrant/projects"
-default['virtualenvwrapper']['user'] = "vagrant"
-default['virtualenvwrapper']['group'] = "vagrant"
-default['virtualenvwrapper']['profile'] = "/home/vagrant/.profile"
-
-default['virtualenvwrapper']['script'] = "/usr/local/bin/virtualenvwrapper.sh"
-default['virtualenvwrapper']['users'] =  ["vagrant"]
+default['dmg']['base_dir'] = '/Applications'
+default['dmg']['cache_dir'] = Chef::Config[:file_cache_path]

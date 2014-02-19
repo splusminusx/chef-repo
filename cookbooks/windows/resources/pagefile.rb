@@ -1,8 +1,9 @@
 #
-# Cookbook Name:: virtualenvwrapper
-# Attribute File:: default
+# Author:: Kevin Moser (<kevin.moser@nordstrom.com>)
+# Cookbook Name:: windows
+# Resource:: pagefile
 #
-# Copyright 2013, Damon Jablons
+# Copyright:: 2012, Nordstrom, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +18,12 @@
 # limitations under the License.
 #
 
-default['virtualenvwrapper']['workon_home'] = "/vagrant/projects"
-default['virtualenvwrapper']['user'] = "vagrant"
-default['virtualenvwrapper']['group'] = "vagrant"
-default['virtualenvwrapper']['profile'] = "/home/vagrant/.profile"
+actions :set, :delete
 
-default['virtualenvwrapper']['script'] = "/usr/local/bin/virtualenvwrapper.sh"
-default['virtualenvwrapper']['users'] =  ["vagrant"]
+attribute :name, :kind_of => String, :name_attribute => true
+attribute :system_managed, :kind_of => [TrueClass, FalseClass]
+attribute :automatic_managed, :kind_of => [TrueClass, FalseClass], :default => false
+attribute :initial_size, :kind_of => Integer
+attribute :maximum_size, :kind_of => Integer
+
+default_action :set

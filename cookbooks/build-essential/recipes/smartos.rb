@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: virtualenvwrapper
-# Attribute File:: default
+# Cookbook Name:: build-essential
+# Recipe:: smartos
 #
-# Copyright 2013, Damon Jablons
+# Copyright 2008-2013, Opscode, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +17,13 @@
 # limitations under the License.
 #
 
-default['virtualenvwrapper']['workon_home'] = "/vagrant/projects"
-default['virtualenvwrapper']['user'] = "vagrant"
-default['virtualenvwrapper']['group'] = "vagrant"
-default['virtualenvwrapper']['profile'] = "/home/vagrant/.profile"
+%w{
+  build-essential
+}.each do |pkg|
 
-default['virtualenvwrapper']['script'] = "/usr/local/bin/virtualenvwrapper.sh"
-default['virtualenvwrapper']['users'] =  ["vagrant"]
+  r = package pkg do
+    action( node['build_essential']['compiletime'] ? :nothing : :install )
+  end
+  r.run_action(:install) if node['build_essential']['compiletime']
+
+end
