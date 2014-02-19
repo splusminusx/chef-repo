@@ -12,11 +12,12 @@ define :django_database, :host => '', :port => '', :user => '', :password => '',
 
   # Includes.
   include_recipe 'postgresql::server'
+  include_recipe 'postgresql::ruby'
 
 
   # Params.
   port = params[:port]
-  host = params[:localhost]
+  host = params[:host]
   database = params[:name]
   user = params[:user]
   password = params[:password]
@@ -26,7 +27,7 @@ define :django_database, :host => '', :port => '', :user => '', :password => '',
 
   # Update host access.
   template "#{node[:postgresql][:dir]}/pg_hba.conf" do
-    cookbook "livetex-qa-site"
+    cookbook "django-site"
   end
 
 
@@ -55,7 +56,7 @@ define :django_database, :host => '', :port => '', :user => '', :password => '',
 
 
   # Creates django database config.
-  template "#{project_path}/#{project_name}/#{project_name}/local_settings.py" do
+  template "#{project_path}/#{project_name}/local_settings.py" do
     source "local_settings.erb"
     mode 0660
     owner "vagrant"

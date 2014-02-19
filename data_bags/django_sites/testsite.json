@@ -1,0 +1,15 @@
+{
+  "id": "testsite",
+  "project_name": "testsite",
+  "project_path": "/vagrant/projects/testsite",
+  "user": "vagrant",
+  "group": "vagrant",
+  "domain": "testsite.local",
+  "dependencies": {
+    "django": "1.5.2",
+    "south": "0.8.2",
+    "psycopg2": "2.5.2"
+  },
+  "database_user": "testsite",
+  "database_password": "testsite"
+}
