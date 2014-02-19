@@ -1,0 +1,9 @@
+{
+  "id": "vagrant",
+  "home": "/home/vagrant",
+  "shell": "/bin/zsh",
+  "password": "$6$qwer4j43q$Fe5E4RhzQFugOFTt9BcTq4IUGeZ.kjgv.SB48jPcfmisGG2GyijDEMxmUXRvWKcd5szhjc305EYdWipiqYPm51",
+  "groups": [
+    "sudo"
+  ]
+}
