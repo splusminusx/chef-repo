@@ -1,0 +1,29 @@
+{
+  "name": "vagrant",
+  "description": "Vagrant Box",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "virtualenvwrapper": {
+      "users": [
+        "vagrant"
+      ]
+    },
+    "oh_my_zsh": {
+      "user_list": [
+        "vagrant"
+      ]
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[git]",
+    "recipe[vim]",
+    "recipe[oh_my_zsh::data_bag]",
+    "recipe[virtualenvwrapper::data_bag]"
+  ],
+  "env_run_lists": {
+  }
+}

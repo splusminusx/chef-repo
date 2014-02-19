@@ -1,0 +1,33 @@
+{
+  "name": "base",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "users": [
+      "stx"
+    ]
+  },
+  "override_attributes": {
+    "virtualenvwrapper": {
+      "users": [
+        "stx"
+      ]
+    },
+    "oh_my_zsh": {
+      "user_list": [
+        "stx"
+      ]
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[git]",
+    "recipe[vim]",
+    "recipe[user::data_bag]",
+    "recipe[oh_my_zsh::data_bag]",
+    "recipe[virtualenvwrapper::data_bag]"
+  ],
+  "env_run_lists": {
+  }
+}

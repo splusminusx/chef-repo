@@ -1,0 +1,7 @@
+{
+  "id": "vagrant",
+  "workon_home": "/vagrant/projects/",
+  "user": "vagrant",
+  "group": "vagrant",
+  "profile": "/home/vagrant/.profile"
+}
