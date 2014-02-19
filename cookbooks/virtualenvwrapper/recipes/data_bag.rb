@@ -42,8 +42,12 @@ virtualenvwrapper_users.each do |virtualenvwrapper_user|
 	  recursive true
 	end
 
-	if not File.exists?(user_profile) 
-	  File.open(user_profile, 'w') {|f| f.write("# profile file") }
+	ruby_block "create_profile" do
+		block do
+			if not File.exists?(user_profile) 
+			  File.open(user_profile, 'w') {|f| f.write("# profile file") }
+			end
+		end
 	end
 
 	# Add variables to user profile
