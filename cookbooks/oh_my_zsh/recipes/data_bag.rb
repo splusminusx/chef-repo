@@ -15,7 +15,7 @@ user_list.each do |user_name|
 
   user_hash = data_bag_item('oh_my_zsh', user_name)
 
-  home_directory = data_bag_item(default['user']['data_bag_name'], user_name)['home']
+  home_directory = data_bag_item(node['user']['data_bag_name'], user_name)['home']
 
   if home_directory.empty?
     home_directory = `cat /etc/passwd | grep "#{user_hash['login']}" | cut -d ":" -f6`.chop
