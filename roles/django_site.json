@@ -1,0 +1,25 @@
+{
+  "name": "django_site",
+  "description": "NGINX/Gunicorn/Django/Postgresql based site",
+  "override_attributes": {
+    "django-site": {
+      "django_sites": [
+        "testsite"
+      ]
+    },
+    "postgresql": {
+      "password": {
+        "postgres": "md527d6d6c830d0f17561fc7f520bfece55"
+      },
+      "password_raw": {
+        "postgres": "asdf123"
+      },
+      "config": {
+        "listen_addresses": "0.0.0.0"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[django-site::data_bag]"
+  ]
+}
