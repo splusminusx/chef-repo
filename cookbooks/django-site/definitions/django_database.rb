@@ -8,7 +8,7 @@
 #
 
 
-define :django_database, :host => '', :port => '', :user => '', :password => '', :project_name => '', :project_path => '' do
+define :django_database, :host => '', :port => '', :database_user => '', :database_password => '', :project_name => '', :project_path => '', :user => '', :group => '' do
 
   # Includes.
   include_recipe 'postgresql::server'
@@ -19,8 +19,10 @@ define :django_database, :host => '', :port => '', :user => '', :password => '',
   port = params[:port]
   host = params[:host]
   database = params[:name]
-  user = params[:user]
-  password = params[:password]
+  database_user = params[:database_user]
+  database_password = params[:database_password]
+  project_user = params[:user]
+  project_group = params[:group]
   project_name = params[:project_name]
   project_path = params[:project_path]
 
@@ -41,9 +43,9 @@ define :django_database, :host => '', :port => '', :user => '', :password => '',
 
 
   # Creates db user.
-  postgresql_database_user user do 
+  postgresql_database_user database_user do 
     connection postgresql_connection_info
-    password password
+    password database_password
     action :create
   end
 
@@ -59,12 +61,12 @@ define :django_database, :host => '', :port => '', :user => '', :password => '',
   template "#{project_path}/#{project_name}/local_settings.py" do
     source "local_settings.erb"
     mode 0660
-    owner "vagrant"
-    group "vagrant"
+    owner project_user
+    group project_group
     variables({
       :database => database,
-      :user => user,
-      :password => password,
+      :user => database_user,
+      :password => database_password,
       :host => host,
       :port => port
     })

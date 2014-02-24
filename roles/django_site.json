@@ -4,8 +4,8 @@
   "override_attributes": {
     "django-site": {
       "django_sites": [
-        "testsite",
         "livetex_qa_site",
+        "testsite",
 	"money"
       ]
     },

@@ -26,10 +26,12 @@ sites.each do |site|
 	end
 
 	django_database opts['project_name'] do 
-		user opts['database_user']
-		password opts['database_password']
+		database_user opts['database_user']
+		database_password opts['database_password']
 		project_name opts['project_name']
 		project_path opts['project_path']
+		user opts['user']
+		group opts['group']
 		host 'localhost'
 		port 5432
 	end

@@ -1,8 +1,0 @@
-{
-  "name": "qa-site",
-  "description": "Site for QA team",
-  "run_list": [
-    "recipe[livetex-qa-site]",
-    "recipe[python]"
-  ]
-}

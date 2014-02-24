@@ -1,0 +1,7 @@
+{
+  "id": "livetex_qa_site",
+  "workon_home": "/home/livetex_qa_site/projects",
+  "user": "livetex_qa_site",
+  "group": "livetex_qa_site",
+  "profile": "/home/livetex_qa_site/.profile"
+}

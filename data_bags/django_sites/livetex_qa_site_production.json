@@ -1,0 +1,15 @@
+{
+  "id": "livetex_qa_site_production",
+  "project_name": "livetex_qa_site",
+  "project_path": "/home/livetex_qa_site/projects/livetex_qa_site",
+  "user": "livetex_qa_site",
+  "group": "livetex_qa_site",
+  "domain": "qa.local",
+  "dependencies": {
+    "django": "1.5.2",
+    "south": "0.8.2",
+    "psycopg2": "2.5.2"
+  },
+  "database_user": "livetex_qa_site",
+  "database_password": "livetex_qa_site"
+}

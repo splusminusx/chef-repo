@@ -1,9 +1,9 @@
 {
-  "name": "ip-172-31-42-209.ec2.internal",
+  "name": "debian-base.vagrantup.com",
   "chef_environment": "_default",
   "run_list": [
-    "role[base]",
-    "role[livetex_qa_site]"
+    "role[vagrant]",
+    "role[django_site]"
   ],
   "normal": {
     "tags": [
@@ -11,7 +11,7 @@
     ],
     "postgresql": {
       "password": {
-        "postgres": "F4KtGa9nY76g0M2MLVTq"
+        "postgres": "md527d6d6c830d0f17561fc7f520bfece55"
       }
     }
   }

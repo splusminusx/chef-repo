@@ -1,0 +1,47 @@
+{
+  "name": "livetex_qa_site",
+  "description": "NGINX/Gunicorn/Django/Postgresql based site",
+  "default_attributes": {
+    "users": [
+      "livetex_qa_site"
+    ]
+  },
+  "override_attributes": {
+    "virtualenvwrapper": {
+      "users": [
+          "livetex_qa_site"
+      ]
+    },
+    "oh_my_zsh": {
+      "user_list": [
+        "livetex_qa_site"
+      ]
+    },
+    "django-site": {
+      "django_sites": [
+        "livetex_qa_site_production"
+      ]
+    },
+    "postgresql": {
+      "password": {
+        "postgres": "md527d6d6c830d0f17561fc7f520bfece55"
+      },
+      "password_raw": {
+        "postgres": "asdf123"
+      },
+      "config": {
+        "listen_addresses": "0.0.0.0"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[apt]",
+    "recipe[git]",
+    "recipe[vim]",
+    "recipe[user::data_bag]",
+    "recipe[oh_my_zsh::data_bag]",
+    "recipe[virtualenvwrapper::data_bag]",
+    "recipe[django-site::data_bag]"
+  ]
+}
+
