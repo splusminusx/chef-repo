@@ -1,10 +1,10 @@
 #!/bin/bash
 
-NAME="<%= @project_name %>"                       	# Name of the application
-DJANGODIR="<%= @django_dir %>"			        # Django project directory
+NAME="<%= @project_name %>"                            	# Name of the application
+DJANGODIR="<%= @django_dir %>"		        	        # Django project directory
 SOCKFILE=/run/gunicorn_<%= @project_name %>.sock        # we will communicte using this unix socket
-USER=vagrant                                      	# the user to run as
-GROUP=vagrant                                     	# the group to run as
+USER=<%= @user %>                                      	# the user to run as
+GROUP=<%= @group %>                                     	# the group to run as
 NUM_WORKERS=3                                           # how many worker processes should Gunicorn spawn
 DJANGO_SETTINGS_MODULE=<%= @project_name%>.settings 	# which settings file should Django use
 

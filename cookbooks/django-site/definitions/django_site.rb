@@ -77,7 +77,9 @@ define :django_site, :project_path => '', :domain => '', :dependencies => '', :u
 	  group project_group
 	  variables({
 	    :project_name => project_name,
-	    :django_dir => "#{project_path}/#{project_name}"
+	    :django_dir => "#{project_path}/#{project_name}",
+	    :user => project_user,
+	    :group => project_group
 	  })
 	end
 
