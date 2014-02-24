@@ -1,4 +1,4 @@
-upstream app_server {
+upstream <%= @project_name %> {
   server unix:/run/gunicorn_<%= @project_name %>.sock fail_timeout=0;
 }
  
@@ -47,7 +47,7 @@ server {
         # Try to serve static files from nginx, no point in making an
         # *application* server like Unicorn/Rainbows! serve static files.
         if (!-f $request_filename) {
-            proxy_pass http://app_server;
+            proxy_pass http://<%= @project_name %>;
             break;
         }
     }
