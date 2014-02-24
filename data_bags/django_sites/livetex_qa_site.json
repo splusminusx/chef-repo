@@ -1,0 +1,15 @@
+{
+  "id": "livetex_qa_site",
+  "project_name": "livetex_qa_site",
+  "project_path": "/vagrant/projects/livetex_qa_site",
+  "user": "vagrant",
+  "group": "vagrant",
+  "domain": "qa.local",
+  "dependencies": {
+    "django": "1.5.2",
+    "south": "0.8.2",
+    "psycopg2": "2.5.2"
+  },
+  "database_user": "livetex_qa_site",
+  "database_password": "livetex_qa_site"
+}

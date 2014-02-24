@@ -1,0 +1,15 @@
+{
+  "id": "money",
+  "project_name": "money",
+  "project_path": "/vagrant/projects/money",
+  "user": "vagrant",
+  "group": "vagrant",
+  "domain": "money.local",
+  "dependencies": {
+    "django": "1.5.2",
+    "south": "0.8.2",
+    "psycopg2": "2.5.2"
+  },
+  "database_user": "money",
+  "database_password": "money"
+}
